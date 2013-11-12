@@ -262,8 +262,8 @@ class Annealer:
         duration = round_figures(int(60.0 * minutes * step / elapsed), 2)
         
         # MP: Don't perform anneal, just return params
-        #return self.anneal(state, Tmax, Tmin, duration, 20)
-        return {'tmax': Tmax, 'tmin': Tmin, 'steps': duration}
+        # return {'tmax': Tmax, 'tmin': Tmin, 'steps': duration}
+        return self.anneal(state, Tmax, Tmin, duration, 20)
 
 if __name__ == '__main__':
     """Test annealer with a traveling salesman problem."""
@@ -324,4 +324,3 @@ if __name__ == '__main__':
     for city in state:
         print "\t", city
     
-    sys.exit()
